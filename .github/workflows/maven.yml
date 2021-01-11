@@ -22,3 +22,8 @@ jobs:
         java-version: 11
     - name: Build with Maven
       run: mvn -B package --file pom.xml
+    - uses: akhileshns/heroku-deploy@v3.8.9
+      with:
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          heroku_app_name: "ais-heroku"
+          heroku_email: "michel.maes95@gmail.com"
