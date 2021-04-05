@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/items")
+@RequestMapping("/api/items")
 public class ItemsController {
 
 	@Autowired
