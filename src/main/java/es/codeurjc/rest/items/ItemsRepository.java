@@ -1,5 +1,6 @@
 package es.codeurjc.rest.items;
 
+import java.time.LocalTime;
 import java.util.Collection;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
@@ -25,6 +26,11 @@ public class ItemsRepository {
 		item2.setDescription("Huevos");
 		item2.setChecked(false);
 		this.postItem(item2);
+
+        Item item3= new Item();
+		item3.setDescription("Time: "+LocalTime.now());
+		item3.setChecked(false);
+		this.postItem(item3);
     }
     
     public Collection<Item> getAllItems(){

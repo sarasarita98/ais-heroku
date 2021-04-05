@@ -1,4 +1,4 @@
-FROM openjdk:11-jdk-alpine
+FROM openjdk:11
 
 COPY target/items-0.0.1-SNAPSHOT.jar items-0.0.1-SNAPSHOT.jar
 
