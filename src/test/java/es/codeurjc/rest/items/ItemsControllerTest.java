@@ -7,69 +7,27 @@ import static org.assertj.core.api.Assertions.assertThat;
 import org.junit.jupiter.api.Test;
 
 public class ItemsControllerTest {
-	
-	@Test
-	public void getAllItemsTest() throws Exception {
-
-		ItemsRepository itemsRepository = new ItemsRepository();
-
-		Collection<Item> items = itemsRepository.getAllItems();
-		
-		assertThat(items).hasSize(2);
-	}
-
-	@Test
-	public void getOneItemTest() throws Exception {
-
-		ItemsRepository itemsRepository = new ItemsRepository();
-
-		Item item = itemsRepository.getItem(Long.valueOf(1));
-		
-		assertThat(item.getDescription()).isEqualTo("Leche");
-	}
 
 	@Test
 	public void postItemTest() throws Exception {
 
+		// GIVEN
+
 		ItemsRepository itemsRepository = new ItemsRepository();
 
 		Item item = new Item();
-		String itemDescription = "Pan";
+		String itemDescription = "Tomate";
 		boolean itemCheked = false;
 		item.setDescription(itemDescription);
 		item.setChecked(itemCheked);
 
+		// WHEN
+
 		Item postedItem = itemsRepository.postItem(item);
 		
+		// THEN
+
 		assertThat(postedItem.getDescription()).isEqualTo(itemDescription);
-	}
-
-	@Test
-	public void putItemTest() throws Exception {
-
-		ItemsRepository itemsRepository = new ItemsRepository();
-
-		Item item = new Item();
-		String itemDescription = "Leche merengada";
-		boolean itemCheked = true;
-		item.setDescription(itemDescription);
-		item.setChecked(itemCheked);
-
-		Item putItem = itemsRepository.putItem(Long.valueOf(1),item);
-		
-		assertThat(putItem.getDescription()).isEqualTo(itemDescription);
-	}
-
-	@Test
-	public void removeItemTest() throws Exception {
-
-		ItemsRepository itemsRepository = new ItemsRepository();
-
-		itemsRepository.removeItem(Long.valueOf(1));
-		
-		Collection<Item> items = itemsRepository.getAllItems();
-		
-		assertThat(items).hasSize(1);
 	}
 
 }
