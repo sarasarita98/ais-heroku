@@ -28,7 +28,7 @@ public class ItemsRepository {
 		this.postItem(item2);
 
         Item item3= new Item();
-		item3.setDescription("Time: "+LocalTime.now());
+		item3.setDescription("Time : "+LocalTime.now());
 		item3.setChecked(false);
 		this.postItem(item3);
     }
