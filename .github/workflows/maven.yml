@@ -24,7 +24,7 @@ jobs:
         path: target
 
   publish_in_heroku_registry:
-    name: Publish in DockerHub
+    name: Publish in Heroku Registry
     runs-on: ubuntu-latest
     needs: [build]
     env:
