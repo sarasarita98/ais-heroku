@@ -56,11 +56,9 @@ jobs:
       HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
       HEROKU_APP: ${{ secrets.HEROKU_APP }}
     steps:
-    - name: Login into Heroku
-      uses: actions/heroku@master
-      with:
-        args: container:login
-    - name: Trigger release in Heroku
-      uses: actions/heroku@master
-      with:
-        args: container:release web
+      - name: Install Heroku CLI
+        run: curl https://cli-assets.heroku.com/install-ubuntu.sh | sh
+      - name: Login in Heroku
+        run: heroku container:login
+      - name: Login in Heroku
+        run: heroku container:release web
