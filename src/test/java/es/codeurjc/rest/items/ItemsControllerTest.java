@@ -1,7 +1,5 @@
 package es.codeurjc.rest.items;
 
-import java.util.Collection;
-
 import static org.assertj.core.api.Assertions.assertThat;
 
 import org.junit.jupiter.api.Test;
