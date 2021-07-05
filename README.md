@@ -1,6 +1,6 @@
 # AIS  Heroku
 
-Este proyecto consta de un servidor REST sencillo para la gestión de items.
+Este proyecto consta de un servidor REST sencillo para la gestión de items.1
 
 ## Desplegar en Heroku
 
